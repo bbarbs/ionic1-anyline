@@ -1,0 +1,42 @@
+<ion-view id="nfcScanTag" hide-nav-bar="true" hide-back-button="true">
+    <ion-content class="scan-content">
+
+        <div class="row">
+            <div class="col image-container">
+                <img src="img/pair.gif">
+            </div>
+        </div>
+
+        <div class="row row-center">
+            <div class="col col-center">
+                <div>
+                    Place device on top of tag
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-center" ng-if="data.showOnWriteTag">
+            <div class="col col-center">
+                <div>
+                    Write Message: {{data.recordToWrite}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row" ng-if="data.showOnWriteTag">
+            <div class="col">
+                <button class="button button-small bottom-buttons center pulse" ng-click="makeTagReadOnly()">
+                    <i ng-class="{'ion-android-unlock': notifier.isTagReadOnly, 'ion-android-lock': !notifier.isTagReadOnly}"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="row row-center" ng-if="data.showOnWriteTag">
+            <div class="col col-center">
+                <span>
+                {{data.readOnlyRemark}}
+                </span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

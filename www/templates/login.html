@@ -1,0 +1,38 @@
+<ion-view id="login">
+    <ion-content scroll="false" style="padding: 40px;">
+        <form name="loginForm" novalidate>
+            <div class="row responsive-md">
+                <div class="col col-50 col-offset-25">
+
+                    <div class="header padding text-center">
+                        <span>Meter Reader</span>
+                    </div>
+
+                    <div class="list">
+                        <label class="item item-input" style="background: transparent; border: 1px solid #FFFFFF;">
+                            <i class="icon ion-android-person"></i>
+                            <input type="text" ng-model="data.username" placeholder="Username" name="user" required style="color: #FFFFFF;">
+                        </label>
+                    </div>
+
+                    <div class="list">
+                        <label class="item item-input" style="background: transparent; border: 1px solid #FFFFFF;">
+                            <i class="icon ion-android-lock"></i>
+                            <input type="password" ng-model="data.password" placeholder="Password" name="pass" required style="color: #FFFFFF;">
+                        </label>
+                    </div>
+
+                    <button class="button button-block button-light" style="color: #F9B309;" ng-disabled="loginForm.user.$invalid || loginForm.pass.$invalid" ng-click="login(data.username, data.password)">
+                        LOGIN
+                    </button>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+
+    <div class="tabs" style="border: none; background: transparent;" ng-if="false">
+        <a class="tab-item" style="color: #FFFFFF;">
+            Set Server Connection
+        </a>
+    </div>
+</ion-view>

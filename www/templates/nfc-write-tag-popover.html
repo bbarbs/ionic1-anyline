@@ -1,0 +1,12 @@
+<ion-popover-view class="fit" style="width: 200px;">
+    <ion-content scroll="false">
+        <ion-list>
+            <ion-item ng-click="deleteTag()" ng-if="data.showDeleteTag" style="padding: 9px; font-size: 14px;">
+               Delete
+            </ion-item>
+            <ion-item ng-click="proceedWriteTag()" ng-if="data.showWriteTag" style="padding: 9px; font-size: 14px;">
+               Proceed Write Tag
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-popover-view>

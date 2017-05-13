@@ -1,0 +1,52 @@
+<ion-view id="flowMeterList">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" style="margin-right: 10px; padding-top: 5px;" ng-click="showFilterBar()">
+            <i class="fixed-icon-size ion-android-search"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        {{data.viewTitle}}
+    </ion-nav-title>
+    <ion-content class="list-content">
+        <ion-list can-swipe="settings.listSwipeable">
+            <ion-item class="meter-item" collection-repeat="item in list.flowMeterList | orderBy:orderByDate:true" ui-sref="app.view-meter({meter_id:item._id, from_view:'flow-meter-list', station_name:item.tagMessage})">
+
+                <a class="round-button item-round-button button-transition item-list-button" ng-click="$event.stopPropagation();" ng-style="{'background': ''}">
+                    <i class="icon ion-qr-scanner"></i>
+                </a>
+
+                <div class="row">
+                    <div class="col">
+                        <span class="meter-date">
+                            {{formatDateTime(item.readingDate)}}
+                        </span>
+                        <p class="meter-station">
+                            {{item.tagMessage}}
+                        </p>
+                        <p class="meter-data">
+                            <span class="meter-result">
+                                {{item.readingResult}}
+                            </span>
+                            <br>
+                            <span class="meter-operator">
+                                {{item.userFullname}}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <ion-option-button class="slide-button" ng-click="onSingleDelete(item)">
+                    <span>Delete</span>
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <button class="button button-positive round-button floating-button bottom-round-button button-transition ng-class:className.zoomButton" ng-style="{'bottom':styleValue.roundButtonBottom}" ng-click="scanTag()">
+        <i class="ion-qr-scanner fixed-icon-size center"></i>
+    </button>
+    <ion-footer-bar align-title="left" class="bar-assertive footer-animate" ng-if="data.hasDeletedData">
+        <span class="title">Meter Deleted</span>
+        <div class="buttons" ng-click="undoDelete()">
+            <button class="button button-clear">UNDO</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

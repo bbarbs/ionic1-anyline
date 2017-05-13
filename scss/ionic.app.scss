@@ -1,0 +1,753 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+$positive: #F9B309 !default;
+$stable: #f5f5f5 !default;
+$bar-height: 55px !default;
+.center {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.round-button {
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute !important;
+    border: none !important;
+    border-radius: 50% !important;
+}
+
+.item-round-button {
+    max-width: 43px !important;
+    max-height: 43px !important;
+    font-size: 28px !important;
+    font-weight: 100 !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    line-height: 44px !important;
+    color: #FFFFFF !important;
+}
+
+.button-transition {
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+}
+
+.item-list-button {
+    top: 16px !important;
+    left: 18px !important;
+}
+
+.item-modal-button {
+    top: 8px !important;
+    left: 18px !important;
+}
+
+.color-station-button {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+.floating-button {
+    z-index: 20 !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26) !important;
+}
+
+.bottom-round-button {
+    max-width: 50px !important;
+    max-height: 50px !important;
+    right: 20px !important;
+}
+
+.small-round-float {
+    max-width: 40px !important;
+    max-height: 40px !important;
+    color: #FFFFFF !important;
+    left: 18px !important;
+    top: 86px !important;
+    background: #FFC73F;
+}
+
+.side-menu-round-button {
+    background: #FFFFFF;
+    max-width: 58px !important;
+    max-height: 58px !important;
+    top: 28px !important;
+    left: 16px !important;
+    font-size: 35px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    line-height: 53px !important;
+    color: #FFFFFF !important;
+    color: #F9B309 !important;
+}
+
+.myPopup .popup {
+    border-radius: 5px !important;
+}
+
+.item-menu-background .item-content {
+    background: #D3D3D3 !important;
+}
+
+.transform-zoomin {
+    -webkit-transform: translateY(0px) scale(1);
+    transform: translateY(0px) scale(1);
+    transition: all 0.3s;
+    transition-delay: 0.05s;
+}
+
+.transform-zoomout {
+    -webkit-transform: translateY(20px) scale(0);
+    transform: translateY(20px) scale(0);
+}
+
+.fixed-icon-size {
+    font-size: 24px !important;
+}
+
+
+/**
+ * Customize popover.
+**/
+
+ion-popover-view.fit {
+    height: auto !important;
+    .list .popover-item {
+        padding: 9px;
+        font-size: 14px;
+    }
+}
+
+ion-popover-view.fit ion-content {
+    position: relative !important;
+}
+
+.platform-ios ion-popover-view.fit {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+
+/**
+ * Remove border in bar.
+**/
+
+.bar.bar-header.no-border-bar,
+.bar.bar-footer.no-border-bar {
+    border: none !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+}
+
+
+/**
+ * Footer animation.
+**/
+
+.footer-animate.ng-enter {
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    height: 0 !important;
+    opacity: 0;
+}
+
+.footer-animate.ng-enter.ng-enter-active {
+    height: 49px !important;
+    opacity: 1;
+}
+
+.footer-animate.ng-leave {
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    height: 49px !important;
+    opacity: 1;
+}
+
+.footer-animate.ng-leave.ng-leave-active {
+    height: 0 !important;
+    opacity: 0;
+}
+
+#login {
+    background: #F9B309;
+    .scroll-content {
+        display: table !important;
+        width: 100% !important;
+        height: 100% !important;
+        form {
+            display: table-cell;
+            vertical-align: middle;
+            .header {
+                padding-bottom: 40px;
+                img {
+                    display: block;
+                    width: 80%;
+                    margin: 0 auto;
+                }
+                span {
+                    font-size: 30px;
+                    color: #FFFFFF;
+                    text-align: center;
+                }
+            }
+            .button.button-light.active,
+            .button.button-light.activated {
+                color: #fff;
+                opacity: inherit;
+            }
+            i {
+                color: #FFFFFF;
+                font-size: 22px;
+                padding-right: 12px;
+            }
+        }
+    }
+}
+
+
+/**
+ * Menu page css.
+**/
+
+#menu {
+    .bar-header {
+        height: 150px;
+    }
+    .bar-header .side-menu-title {
+        top: 90px !important;
+        font-size: 18px;
+        color: #FFFFFF;
+        left: 10px !important;
+        position: relative!important;
+    }
+    .side-content {
+        top: 150px;
+        .side-item {
+            border: none;
+            font-size: 13px;
+        }
+    }
+}
+
+
+/**
+ * Css of flow meter list.
+**/
+
+#flowMeterList {
+    .list-content {
+        background-color: #F5F5F5;
+        .meter-item .item-content {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .row {
+            padding-left: 72px;
+            .col {
+                .meter-date {
+                    font-size: 11px;
+                    color: #808080;
+                    float: right;
+                    padding-right: 5px;
+                }
+                .meter-station {
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+                .meter-data {
+                    line-height: 100%;
+                    padding-top: 2px;
+                    .meter-result {
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: #808080;
+                    }
+                    .meter-operator {
+                        font-size: 12px;
+                        color: #808080;
+                    }
+                }
+            }
+        }
+        .slide-button {
+            background: #FF0000;
+            color: #FFFFFF;
+            span {
+                width: 150px;
+                font-size: 14px;
+            }
+        }
+    }
+    .bar-footer {
+        height: 44px;
+        .title {
+            font-size: 13px;
+            margin-top: -6px;
+            padding-left: 12px;
+        }
+        .buttons button {
+            font-size: 12px;
+            padding-right: 12px;
+            font-weight: 600;
+        }
+    }
+}
+
+
+/**
+ * NFC tag list css.
+**/
+
+#nfcTagList {
+    .list-content {
+        background-color: #F5F5F5;
+        .tag-item .item-content {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            i {
+                color: #f9b309;
+            }
+        }
+        .row {
+            padding-left: 62px;
+            .col {
+                font-size: 15px;
+            }
+        }
+        .slide-button {
+            span {
+                width: 60px;
+                font-size: 14px;
+                color: #FFFFFF;
+            }
+        }
+        .slide-button:nth-child(1) {
+            background: #FF0000;
+        }
+        .slide-button:nth-child(2) {
+            background: #DCDCDC;
+        }
+    }
+    .bar-footer {
+        height: 44px;
+        .title {
+            font-size: 13px;
+            margin-top: -6px;
+            padding-left: 12px;
+        }
+        .buttons button {
+            font-size: 12px;
+            padding-right: 12px;
+            font-weight: 600;
+        }
+    }
+}
+
+
+/**
+ * Settings page css.
+**/
+
+#settings {
+    .setting-item-divider {
+        margin-left: 15px;
+        margin-right: 15px;
+        background: transparent;
+        padding: 0;
+    }
+    .setting-content {
+        font-size: 14px;
+        border: none;
+    }
+    .setting-title {
+        border: none;
+        font-size: 13px;
+        color: #939393;
+        padding-bottom: 5px;
+        font-weight: 600;
+    }
+    label {
+        border: none;
+        div {
+            font-size: 14px;
+            h4 {
+                color: #939393;
+            }
+        }
+    }
+    .about-item {
+        border: none;
+        span {
+            font-size: 14px;
+        }
+        h4 {
+            color: #939393;
+        }
+    }
+}
+
+
+/**
+ * Css of view meter page.
+**/
+
+#viewMeter {
+    i {
+        font-size: 24px;
+    }
+    .bar-subheader .title {
+        padding-left: 62px;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .has-subheader {
+        span {
+            font-size: 15px;
+        }
+        i {
+            color: #808080;
+        }
+        .item-image {
+            padding: 32px 25px 20px 25px;
+        }
+        .row-custom-padding {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: none;
+        }
+        .row-custom-padding > .col {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        /*.row-custom-padding:nth-child(1) {
+            padding-top: 28px;
+        }*/
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+
+/**
+ * Css of edit meter modal.
+**/
+
+#editMeterModal {
+    .bar-header {
+        i {
+            font-size: 24px;
+            color: #808080;
+        }
+        .buttons button:first-child {
+            margin-left: 10px;
+            padding-top: 5px;
+        }
+        .buttons button:first-child {
+            margin-right: 10px;
+            padding-top: 5px;
+        }
+        .buttons button {
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+    .content-modal {
+        background-color: #F5F5F5;
+        .content-title {
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            color: #808080;
+            padding-left: 14px;
+            padding-top: 10px;
+        }
+        .content-label {
+            border: none;
+        }
+        .custom-input-label {
+            font-size: 13px;
+            color: #808080;
+        }
+        .item input {
+            font-size: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .custom-content {
+            background: transparent;
+            padding: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .image-item {
+            border: none;
+            background: transparent;
+            img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+
+/**
+ * NFC write tag message css.
+**/
+
+#nfcWriteTag {
+    .bar-header {
+        i {
+            font-size: 24px;
+            color: #808080;
+        }
+        .buttons button {
+            margin-left: 10px;
+            padding-top: 5px;
+        }
+        .buttons button:nth-child(1) {
+            margin-right: 10px;
+            padding-top: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .buttons button:nth-child(2) {
+            margin-right: 10px;
+            padding-top: 5px;
+        }
+    }
+    .bar-subheader {
+        i {
+            font-size: 24px;
+            padding-right: 7px;
+            color: #939393;
+        }
+        label {
+            background-color: transparent;
+        }
+    }
+    .write-content {
+        background-color: #f5f5f5;
+        i {
+            color: #f9b309;
+        }
+    }
+}
+
+#meterModifiedInfoModal {
+    .bar-header {
+        height: 200px;
+        background-color: #c6c6c6;
+        .buttons button:first-child {
+            margin-left: 10px;
+            padding-top: 5px;
+            i {
+                font-size: 24px;
+                color: #808080;
+            }
+        }
+        .title {
+            vertical-align: middle;
+            margin-top: 72px;
+            font-size: 65px;
+            height: 100%;
+            color: #808080;
+        }
+        .side-meter-result {
+            top: 160px;
+            font-size: 22px;
+            color: #FFFFFF;
+            left: 22px;
+            position: absolute;
+            font-weight: 600;
+            i {
+                font-size: 24px;
+                color: #808080;
+                padding-right: 16px;
+            }
+        }
+    }
+    .content-margin {
+        top: 205px;
+        .no-border {
+            border: none;
+        }
+        .row-custom-padding {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: none;
+        }
+        .row-custom-padding > .col {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+#nfcScanTag {
+    background-color: #1e1e1e;
+    .scroll-content {
+        display: table !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .scroll {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    .row:nth-child(2) > div {
+        color: #9a9898;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 18px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        //border: 2.5px solid #ffffff;
+    }
+    .image-container {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+        border: none;
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            background-color: transparent;
+            //border: 2px solid #000000;
+        }
+    }
+    .row:nth-child(3) > div {
+        color: #c6c6c6;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 15px;
+    }
+    .row:nth-child(4) > .col {
+        margin-top: 50px;
+    }
+    .row:nth-child(5) > .col {
+        span {
+            color: #c6c6c6;
+        }
+    }
+    .bottom-buttons {
+        background-color: #FFFFFF;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        i {
+            color: #808080;
+            font-size: 28px;
+        }
+    }
+}
+
+#viewCheckTagModal {
+    .bar-header {
+        height: 200px;
+        background-color: #c6c6c6;
+        .buttons button:first-child {
+            margin-left: 10px;
+            padding-top: 5px;
+            i {
+                font-size: 24px;
+                color: #808080;
+            }
+        }
+        .title {
+            vertical-align: middle;
+            margin-top: 72px;
+            font-size: 65px;
+            height: 100%;
+            color: #808080;
+        }
+        .side-meter-result {
+            top: 160px;
+            font-size: 22px;
+            color: #FFFFFF;
+            left: 22px;
+            position: absolute;
+            font-weight: 600;
+            i {
+                font-size: 24px;
+                color: #808080;
+                padding-right: 16px;
+            }
+        }
+    }
+    .content-margin {
+        top: 205px;
+        .row-custom-padding {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: none;
+        }
+        .row-custom-padding > .col {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic",
+"www/lib/ionic-filter-bar/scss/ionic.filter.bar";

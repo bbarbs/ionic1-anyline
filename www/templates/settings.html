@@ -1,0 +1,108 @@
+<ion-view id="settings">
+    <ion-nav-title>
+        Settings
+    </ion-nav-title>
+    <ion-content>
+        <ion-list>
+            <!--ion-item class="setting-content" ng-click="showSyncOptions()">
+                Sync Options
+            </ion-item>
+
+            <ion-item class="setting-item-divider">
+            </ion-item-->
+
+            <!--ion-item class="setting-item-divider">
+            </ion-item-->
+
+            <ion-item class="setting-title">
+                GENERAL
+            </ion-item>
+
+            <ion-item class="setting-item-divider" ng-style="{'border-top': data.itemBorderTop}">
+            </ion-item>
+            
+            <ion-toggle class="setting-content" ng-model="settings.listSwipeable" ng-change="onListSwipeableChange()">
+                Make List Swipeable
+            </ion-toggle>
+
+            <ion-item class="setting-title">
+                TAG SCANNING
+            </ion-item>
+
+            <ion-item class="setting-item-divider" ng-style="{'border-top': data.itemBorderTop}">
+            </ion-item>
+
+            <ion-toggle class="setting-content" ng-model="settings.tagVibrateOnRead" ng-change="onTagVibrateChange()">
+                Vibrate on read
+            </ion-toggle>
+            
+            <ion-item class="setting-item-divider">
+            </ion-item>
+
+            <ion-toggle class="setting-content" ng-model="settings.tagBeepOnRead" ng-change="onTagBeepChange()">
+                Beep on read
+            </ion-toggle>
+
+            <ion-item class="setting-title">
+                METER READING
+            </ion-item>
+
+            <ion-item class="setting-item-divider" ng-style="{'border-top': data.itemBorderTop}">
+            </ion-item>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Cutout Alignment
+                    <h4>Reading box position</h4>
+                </div>
+                <select ng-options="pos.position for pos in settings.listOfAlignment track by pos.position" ng-model="settings.cutoutAlignment" ng-change="cutoutChange(settings.cutoutAlignment)">
+                </select>
+            </label>
+
+            <ion-item class="setting-item-divider">
+            </ion-item>
+
+            <ion-toggle class="setting-content" ng-model="settings.meterBeepOnResult" ng-change="onMeterBeepChange()">
+                Beep on result
+            </ion-toggle>
+
+            <ion-item class="setting-item-divider">
+            </ion-item>
+
+            <ion-toggle class="setting-content" ng-model="settings.meterVibrateOnResult" ng-change="onMeterVibrateChange()">
+                Vibrate on result
+            </ion-toggle>
+
+            <ion-item class="setting-item-divider">
+            </ion-item>
+
+            <ion-toggle class="setting-content" ng-model="settings.meterBlinkOnResult" ng-change="onMeterBlinkChange()">
+                Enable blink animation
+            </ion-toggle>
+
+            <ion-item class="setting-title">
+                ACTION CONFIRMATIONS
+            </ion-item>
+
+            <ion-item class="setting-item-divider" ng-style="{'border-top': data.itemBorderTop}">
+            </ion-item>
+
+            <ion-toggle class="setting-content" ng-model="settings.confirmDelete" ng-change="onConfirmDeleteChange()">
+                Confirm before deleting
+            </ion-toggle>
+
+            <ion-item class="setting-title">
+                ABOUT
+            </ion-item>
+
+            <ion-item class="setting-item-divider" ng-style="{'border-top': data.itemBorderTop}">
+            </ion-item>
+
+            <ion-item class="about-item">
+                <span>Version</span>
+                <h4>{{settings.appVersionNumber}}</h4>
+            </ion-item>
+
+        </ion-list>
+    </ion-content>
+</ion-view>

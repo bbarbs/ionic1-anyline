@@ -1,0 +1,48 @@
+<ion-view id="nfcTagList">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" style="margin-right: 10px; padding-top: 5px;" ng-click="showFilterBar()">
+            <i class="fixed-icon-size ion-android-search"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        NFC Tag
+    </ion-nav-title>
+
+    <div class="backdrop" ng-class="{'visible active' : data.closeMfbButton === 'open'}" ng-click="onBackDropClick()">
+    </div>
+
+    <ion-content class="list-content">
+        <ion-list can-swipe="settings.listSwipeable">
+            <ion-item class="tag-item" ng-repeat="item in list.nfcTagList | orderBy:orderByDate:true track by item._id" ng-click="editTagMessage(item)">
+                <a class="round-button item-round-button item-modal-button" ng-click="$event.stopPropagation();" ng-style="{'background-color': transparent}">
+                    <i class="icon ion-android-bookmark"></i>
+                </a>
+                <div class="row">
+                    <div class="col">
+                        {{item.tagMessage}}
+                    </div>
+                </div>
+
+                <ion-option-button class="slide-button" ng-click="onSingleDelete(item)">
+                    <span>Delete</span>
+                </ion-option-button>
+                <ion-option-button class="slide-button" ng-click="openTagListPopover(item, $event)">
+                    <span>More</span>
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+    <nav class="button-transition ng-class:className.zoomButton" ng-style="{'bottom':styleValue.roundButtonBottom}" mfb-menu position="br" effect="zoomin" bgcolor='#F9B309' active-icon="{{icon.active}}" resting-icon="{{icon.resting}}" toggling-method="click" menu-state="data.closeMfbButton">
+        <button mfb-button bgcolor='#336699' label="New Tag Message" icon="{{icon.write}}" ng-click="writeTag()"></button>
+        <button mfb-button bgcolor='#009688' label="Scan Tag" icon="{{icon.scan}}" ng-click="scanTag()"></button>
+        <button mfb-button bgcolor='#ef473a' label="Erase Tag" icon="{{icon.erase}}" ng-click="eraseTag()"></button>
+    </nav>
+
+    <ion-footer-bar align-title="left" class="bar-assertive footer-animate" ng-if="data.hasDeletedData">
+        <span class="title">Tag Deleted</span>
+        <div class="buttons" ng-click="undoDelete()">
+            <button class="button button-clear">UNDO</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

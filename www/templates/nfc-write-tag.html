@@ -1,0 +1,34 @@
+<ion-view id="nfcWriteTag" hide-nav-bar="true" hide-back-button="true">
+    <ion-header-bar class="bar-stable">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="cancelWriteTag()">
+                <i class="ion-android-arrow-back"></i>
+            </button>
+        </div>
+        <h1 class="title"></h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-if="!data.showDeleteTag" ng-click="saveTagMessage()">
+                SAVE
+            </button>
+
+            <button class="button button-clear" ng-click="openPopover($event)">
+                <i class="ion-android-more-vertical"></i>
+            </button>
+        </div>
+    </ion-header-bar>
+
+    <ion-header-bar class="bar-subheader bar-stable no-border-bar item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-android-bookmark"></i>
+            <input type="text" placeholder="Write message..." ng-model="data.tagMessage">
+        </label>
+    </ion-header-bar>
+
+    <ion-content class="has-subheader write-content">
+        <ion-list>
+            <ion-item class="item-icon-left" ng-repeat="item in list.nfcTagList | filter:data.tagMessage | orderBy:orderByDate:true track by item._id" ng-click="getTagOnList(item)">
+                <i class="icon ion-android-bookmark"></i> {{item.tagMessage}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

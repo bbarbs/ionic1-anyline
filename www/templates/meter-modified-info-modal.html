@@ -1,0 +1,53 @@
+<ion-modal-view id="meterModifiedInfoModal">
+    <ion-header-bar align-title="center">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeModificationModalInfo()">
+                <i class="ion-android-close"></i>
+            </button>
+        </div>
+        <i class="title ion-qr-scanner"></i>
+        <span class="side-meter-result">
+            <i class="ion-qr-scanner"></i>
+            {{data.readingResult}}
+        </span>
+    </ion-header-bar>
+    <ion-content class="content-margin">
+        <ion-list>
+            <ion-item class="no-border">
+                Modified
+            </ion-item>
+            <ion-item class="row-custom-padding">
+                <div class="row row-top">
+                    <div class="col">
+                        <div class="center">
+                            <i class="ion-android-time"></i>
+                        </div>
+                    </div>
+                    <div class="col col-80 col-offset-10">
+                        <span>
+                            {{meterView.dateModified | date: 'EEE, MMM dd, yyyy'}}
+                        </span>
+                        <br>
+                        <span>
+                            {{meterView.dateModified | date: 'hh:mm a'}}
+                        </span>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="row-custom-padding">
+                <div class="row row-top">
+                    <div class="col">
+                        <div class="center">
+                            <i class="ion-android-person"></i>
+                        </div>
+                    </div>
+                    <div class="col col-80 col-offset-10">
+                        <span>
+                            {{meterView.userNameModified}}
+                        </span>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

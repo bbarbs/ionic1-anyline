@@ -1,0 +1,126 @@
+<ion-view id="viewMeter">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" style="margin-right: 25px; padding-top: 5px;" ng-click="saveReading()" ng-if="data.isReadingMeterNew">
+            <i class="fixed-icon-size ion-android-done"></i>
+        </button>
+        <button class="button button-clear" style="margin-right: 25px; padding-top: 5px;" ng-click="deleteReading()" ng-if="!data.isReadingMeterNew">
+            <i class="fixed-icon-size ion-android-delete"></i>
+        </button>
+        <button class="button button-clear" style="margin-right: 25px; padding-top: 5px;" ng-click="shareReading()">
+            <i class="fixed-icon-size ion-android-share-alt"></i>
+        </button>
+        <!--button class="button button-clear" style="margin-right: 25px; padding-top: 5px;" ng-click="syncReading()">
+            <i class="ion-android-sync fixed-icon-size"></i>
+        </button-->
+        <button class="button button-clear" style="margin-right: 10px; padding-top: 5px;" ng-click="openPopover($event)">
+            <i class="fixed-icon-size ion-android-more-vertical"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-header-bar align-title="left" class="bar-subheader bar-positive no-border-bar">
+        <span class="title">
+            {{data.readingResult}}
+        </span>
+    </ion-header-bar>
+    <ion-content class="has-subheader">
+        <ion-item class="item-image">
+            <img ng-src="{{data.imagePath}}">
+        </ion-item>
+        <ion-list>
+            <ion-item class="row-custom-padding">
+                <div class="row row-top">
+                    <div class="col">
+                        <div class="center">
+                            <i class="ion-android-time"></i>
+                        </div>
+                    </div>
+                    <div class="col col-80 col-offset-10">
+                        <span>
+                            {{data.readingDate | date: 'EEE, MMM dd, yyyy'}}
+                        </span>
+                        <br>
+                        <span>
+                            {{data.readingDate | date: 'hh:mm a'}}
+                        </span>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="row-custom-padding" ng-if="data.isMeterModified" ng-click="showModifiedInfo()">
+                <div class="row row-top">
+                    <div class="col">
+                        <div class="center">
+                            <i class="ion-information-circled"></i>
+                        </div>
+                    </div>
+                    <div class="col col-80 col-offset-10">
+                        <span>
+                            {{data.meterStatus}}
+                        </span>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="row-custom-padding" ng-click="showLocation()">
+                <div class="row row-top">
+                    <div class="col">
+                        <div class="center">
+                            <i class="ion-android-pin"></i>
+                        </div>
+                    </div>
+                    <div class="col col-80 col-offset-10">
+                        <span>
+                            {{data.tagMessage}}
+                        </span>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="row-custom-padding" ng-click="showLocation()">
+                <div class="row row-top">
+                    <div class="col">
+                        <div class="center">
+                            <i class="ion-android-locate"></i>
+                        </div>
+                    </div>
+                    <div class="col col-80 col-offset-10">
+                        <span>
+                           {{data.latitude}}
+                        </span>
+                        <br>
+                        <span>
+                           {{data.longitude}}
+                        </span>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="row-custom-padding">
+                <div class="row row-top">
+                    <div class="col">
+                        <div class="center">
+                            <i class="ion-android-person"></i>
+                        </div>
+                    </div>
+                    <div class="col col-80 col-offset-10">
+                        <span>
+                            {{data.userFullname}}
+                        </span>
+                    </div>
+                </div>
+            </ion-item>
+            <!--ion-item class="row-custom-padding">
+                <div class="row row-top">
+                    <div class="col">
+                        <div class="center">
+                            <i class="ion-android-image"></i>
+                        </div>
+                    </div>
+                    <div class="col col-80 col-offset-10">
+                        <img ng-src="{{data.imagePath}}">
+                    </div>
+                </div>
+            </ion-item-->
+
+
+        </ion-list>
+    </ion-content>
+    <button class="round-button floating-button small-round-float center ng-class:className.zoomButton" ng-click="editGasMeter()">
+        <i class="ion-android-create"></i>
+    </button>
+</ion-view>

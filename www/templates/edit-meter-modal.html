@@ -1,0 +1,31 @@
+<ion-modal-view id="editMeterModal">
+    <ion-header-bar align-title="left" class="bar-stable no-border-bar">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEditReading()">
+                <i class="ion-android-close"></i>
+            </button>
+        </div>
+        <h1 class="title"></h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="updateReading()">
+                SAVE
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="content-modal">
+        <ion-list>
+            <ion-item class="content-title">
+                Meter Correction
+            </ion-item>
+            <ion-item class="image-item">
+                <img ng-src="{{data.imagePath}}">
+            </ion-item>
+            <label class="item item-input item-floating-label content-label">
+                <span class="input-label custom-input-label">Meter Reading</span>
+                <input id="inputEditReading" type="tel" pattern="[0-9]*" ng-model="data.editReadingMeter" number-only>
+            </label>
+            <ion-item class="custom-content">
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>
